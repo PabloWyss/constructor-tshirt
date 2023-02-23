@@ -1,11 +1,20 @@
+import Tshirt from "../../Components/Tshirt"
+import { GridDiv,HomeDiv } from "./Home.styles"
+import { Tshirts } from "../../Tshirts/TshirtsData"
+
+
 const Home = () => {
 
+    
+
     return (
-        <div>
-            
-            <p>Hola</p> 
-        </div>
-        
+        <HomeDiv>
+            <GridDiv >
+            {Tshirts.map((tshirt,index) => 
+                    <Tshirt key={index} tshirtinfo={tshirt}/>
+            )}
+            </GridDiv >
+        </HomeDiv> 
     )
 }
 

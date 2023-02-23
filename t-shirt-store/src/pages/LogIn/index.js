@@ -21,11 +21,14 @@ const LogIn = () => {
     const fetchData = async (obj) => {
         const response = await motionApi.post("backend/api/auth/token/",obj,config)
         try {
+            console.log(response.data)
             dispatch(addUserInfo(response.data))
+            localStorage.setItem('Token', response.data.access);
+            localStorage.setItem('UserName', response.data.user.first_name);
             navigate("/home")
           } catch (err) {
-            alert("Hola")
-            console.log("hola")
+            alert(err)
+            console.log(err)
           } 
     }
 

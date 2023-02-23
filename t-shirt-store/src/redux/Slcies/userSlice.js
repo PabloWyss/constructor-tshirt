@@ -1,5 +1,5 @@
 import { createSlice} from "@reduxjs/toolkit";
-import { current } from "@reduxjs/toolkit";
+
 
 export const userSlice = createSlice({
     name: "user",
@@ -9,9 +9,7 @@ export const userSlice = createSlice({
     reducers: {
         addUserInfo : (state,action) => {
             state.userInfo["user"]=action.payload
-            console.log(current(state.userInfo))
         }
-        
     } 
 })
 export const { addUserInfo  } = userSlice.actions;
