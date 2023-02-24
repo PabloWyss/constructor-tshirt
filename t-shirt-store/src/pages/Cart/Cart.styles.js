@@ -9,7 +9,7 @@ export const CartTableFooter = styled.tfoot `
     
 `
 
-export const CartFileTave = styled.tr `
+export const CartRowTable = styled.tbody `
     :nth-child(2n) {
         background-color: #dbd8d8;
     }

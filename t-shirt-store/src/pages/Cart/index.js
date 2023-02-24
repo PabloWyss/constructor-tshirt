@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { CartTableTitle,CartTableFooter,CartTable,CartPage  } from "./Cart.styles";
+import { CartTableTitle,CartTableFooter,CartTable,CartPage,CartRowTable} from "./Cart.styles";
 import { useNavigate } from "react-router-dom";
 import RowTable from "../../Components/RowTable";
 
@@ -33,13 +33,15 @@ const Cart = () => {
                         <th></th>
                     </tr>
                 </CartTableTitle >
-                {cartKeys.map((key,index)=>{
-                    return (
-                        <RowTable key={index} keys={key} cartInfo={cartInfo[key]}/>
-                    )
-                })
+                <CartRowTable>
+                    {cartKeys.map((key,index)=>{
+                        return (
+                            <RowTable key={index} keys={key} cartInfo={cartInfo[key]}/>
+                        )
+                    })
 
-                }
+                    }
+                </CartRowTable>
                 <CartTableFooter >
                     <tr>
                         <th></th>

@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import { addItem, removeItem,removeItemFromList  } from "../../redux/Slcies/cartSlice"
 
+
 const RowTable = (prop) => {
     
     const dispatch = useDispatch()
@@ -21,7 +22,6 @@ const RowTable = (prop) => {
 
 
     return (
-        <tbody>
             <tr>
                 <td>{prop.keys}</td>
                 <td>{`$${prop.cartInfo.price}`}</td>
@@ -39,7 +39,6 @@ const RowTable = (prop) => {
                     </button>
                 </td>
             </tr>
-        </tbody>
     )
 }
 

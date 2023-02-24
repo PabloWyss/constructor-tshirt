@@ -1,7 +1,11 @@
+import { FooterDiv } from "./Footer.styles"
+
 const Footer = () => {
 
     return (
-        <p>Footer</p>
+        <FooterDiv >
+            
+        </FooterDiv >
     )
 }
 
