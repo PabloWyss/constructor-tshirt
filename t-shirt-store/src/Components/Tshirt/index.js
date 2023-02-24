@@ -1,13 +1,24 @@
-import { TshirtImg } from "./Tishirt.styles"
+import { TshirtImg,InfoTshirtDiv,AddCartBurton } from "./Tishirt.styles"
+import { useDispatch } from 'react-redux';
+import { addToCart } from "../../redux/Slcies/cartSlice";
+
 
 const Tshirt = (prop) => {
 
-    console.log(prop.tshirtinfo.url)
+    const dispatch = useDispatch()
 
+    const handleAddCartButton = () => {
+        dispatch(addToCart(prop.tshirtinfo))
+
+    }
 
     return (
         <div>
             <TshirtImg alt="Tshirt" src={prop.tshirtinfo.url}/>
+            <InfoTshirtDiv>
+                <p>Price: ${prop.tshirtinfo.price}</p>
+                <AddCartBurton onClick={handleAddCartButton}>Add to Cart</AddCartBurton>
+            </InfoTshirtDiv>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const GridDiv = styled.div `
     display: grid;
     align-items: center;
