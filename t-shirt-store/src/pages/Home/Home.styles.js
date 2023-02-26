@@ -7,11 +7,11 @@ export const GridDiv = styled.div `
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 90vh;
     aspect-ratio: 1/1;
 `
 
 export const HomeDiv= styled.div `
     display: flex;
     justify-content: center;
+    height: 100%;
 `

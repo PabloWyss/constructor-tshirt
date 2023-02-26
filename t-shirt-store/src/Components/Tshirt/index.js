@@ -24,20 +24,18 @@ const Tshirt = (prop) => {
 
 
     return (
-        <ImageWithInfoDiv>
+        <ImageWithInfoDiv onMouseLeave={handleStopHoverOverImg}>
             <TshirtImg alt="Tshirt" src={prop.tshirtinfo.url} 
             onClick={handleClickTshirt}
             onMouseEnter={handleHoverOverImg}
-            onMouseLeave={handleStopHoverOverImg}/>
-            {/* {hoverOver &&  */}
+            />
+            {hoverOver && 
             <OverImageDiv>
-                <InfoTshirtDiv>
-                <p>Price: ${prop.tshirtinfo.price}</p>
-                <p>More info</p>
-                <AddToCartButton tshirtinfo={prop.tshirtinfo}/>
+                <InfoTshirtDiv onClick={handleClickTshirt}>
+                <p>More Info:</p>
                 </InfoTshirtDiv>
-            </OverImageDiv>
-            
+            </OverImageDiv>}
+            <AddToCartButton tshirtinfo={prop.tshirtinfo}/>
         </ImageWithInfoDiv>
     )
 }

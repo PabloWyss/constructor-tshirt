@@ -1,4 +1,19 @@
 import styled from 'styled-components';
+import { keyframes } from 'styled-components'
+
+export const breatheAnimation = keyframes`
+ 0% { transform: scale(1) }
+ 30% { transform: scale(1.6)}
+ 60% { transform: scale(1.6) }
+ 100% { transform: scale(1)}
+`
+
+export const breatheAnimation2 = keyframes`
+0% { transform: scale(1) }
+30% { transform: scale(1.6)}
+60% { transform: scale(1.6) }
+100% { transform: scale(1)}
+`
 
 export const HeaderDiv = styled.div `
     display: flex;
@@ -30,6 +45,8 @@ export const CartImg = styled.svg`
 export const DivCartNumber = styled.div `
     display: flex;
     align-items: center;
+    
+
 `
 
 export const HeaderButton = styled.button `
@@ -42,5 +59,12 @@ export const HeaderLinks = styled.p `
         transition: .3s;
         border-bottom: solid 1px black;
     }
+`
+
+export const NumberCount = styled.p `
+    
+    animation-name: ${props => props.completed ? breatheAnimation : breatheAnimation2};
+    animation-duration: 2s;
+    animation-iteration-count: 4s;
 `
 
