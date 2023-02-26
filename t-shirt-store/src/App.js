@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import TshirtProduct from './pages/Tshirt-Product';
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/logIn" element={<LogIn/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/tshirt/:product" element={<TshirtProduct/>}/>
       </Routes>
       <Footer />
     </div>

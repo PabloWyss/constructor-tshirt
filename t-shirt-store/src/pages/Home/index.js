@@ -5,13 +5,14 @@ import { Tshirts } from "../../Tshirts/TshirtsData"
 
 const Home = () => {
 
-    
+    const tshirtsNames = Object.keys(Tshirts)
+
 
     return (
         <HomeDiv>
             <GridDiv >
-            {Tshirts.map((tshirt,index) => 
-                    <Tshirt key={index} tshirtinfo={tshirt}/>
+            {tshirtsNames.map((tshirt,index) => 
+                    <Tshirt key={index} tshirtinfo={Tshirts[tshirt]}/>
             )}
             </GridDiv >
         </HomeDiv> 

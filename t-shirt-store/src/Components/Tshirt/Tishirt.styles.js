@@ -15,8 +15,14 @@ export const InfoTshirtDiv = styled.div`
     align-items: center;
 `
 
-export const AddCartBurton = styled.button`
+export const AddCartButtonStyle = styled.button`
     height: 30px;
     width: 100px;
-    
+`
+export const ImageWithInfoDiv = styled.div`
+    position: relative;
+`
+
+export const OverImageDiv = styled.div `
+    position: absolute;
 `

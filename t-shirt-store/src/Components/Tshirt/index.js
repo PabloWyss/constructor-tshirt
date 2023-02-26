@@ -1,25 +1,44 @@
-import { TshirtImg,InfoTshirtDiv,AddCartBurton } from "./Tishirt.styles"
-import { useDispatch } from 'react-redux';
-import { addToCart } from "../../redux/Slcies/cartSlice";
+import { TshirtImg,InfoTshirtDiv,OverImageDiv,ImageWithInfoDiv } from "./Tishirt.styles"
+import { useNavigate } from "react-router-dom";
+import AddToCartButton from "../AddToCartButton";
+import { useState } from "react";
 
 
 const Tshirt = (prop) => {
 
-    const dispatch = useDispatch()
+    const [hoverOver,setHoverOver] = useState(false)
+    const navigate = useNavigate()
+    
 
-    const handleAddCartButton = () => {
-        dispatch(addToCart(prop.tshirtinfo))
-
+    const handleClickTshirt = () => {
+        navigate(`/tshirt/${prop.tshirtinfo.name}`)
+    }
+    const handleHoverOverImg = (e) => {
+        e.preventDefault()
+        setHoverOver(true)
+    }
+    const handleStopHoverOverImg = (e) => {
+        e.preventDefault()
+        setHoverOver(false)
     }
 
+
     return (
-        <div>
-            <TshirtImg alt="Tshirt" src={prop.tshirtinfo.url}/>
-            <InfoTshirtDiv>
+        <ImageWithInfoDiv>
+            <TshirtImg alt="Tshirt" src={prop.tshirtinfo.url} 
+            onClick={handleClickTshirt}
+            onMouseEnter={handleHoverOverImg}
+            onMouseLeave={handleStopHoverOverImg}/>
+            {/* {hoverOver &&  */}
+            <OverImageDiv>
+                <InfoTshirtDiv>
                 <p>Price: ${prop.tshirtinfo.price}</p>
-                <AddCartBurton onClick={handleAddCartButton}>Add to Cart</AddCartBurton>
-            </InfoTshirtDiv>
-        </div>
+                <p>More info</p>
+                <AddToCartButton tshirtinfo={prop.tshirtinfo}/>
+                </InfoTshirtDiv>
+            </OverImageDiv>
+            
+        </ImageWithInfoDiv>
     )
 }
 
