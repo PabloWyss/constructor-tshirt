@@ -64,7 +64,6 @@ export const HeaderLinks = styled.p `
 export const NumberCount = styled.p `
     
     animation-name: ${props => props.completed ? breatheAnimation : breatheAnimation2};
-    animation-duration: 2s;
-    animation-iteration-count: 4s;
+    animation-duration: 1.5s;
 `
 
